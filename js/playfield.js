@@ -104,7 +104,20 @@ function watchExpression(playfield, examples, regex, message) {
       updateRequirements();
     }
   }
-  regex.onkeyup = check;
+  function proceedToNextStep(e) {
+      if (!e) e = window.event;
+      var keyCode = e.keyCode || e.which;
+      if (keyCode == '13') {
+          var nextPage = playfield.getElementsByClassName("next-page");
+          var nextPageUrl = nextPage.href;
+          window.location.href = nextPageUrl;
+          return false;
+      }
+  }
+  regex.onkeyup = function (e) {
+      check();
+      proceedToNextStep(e);
+  }
   
   var experiments = playfield.getElementsByClassName("experiment");
   if (experiments.length == 1) {
