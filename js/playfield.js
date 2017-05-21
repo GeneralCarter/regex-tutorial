@@ -108,8 +108,10 @@ function watchExpression(playfield, examples, regex, message) {
       if (!e) e = window.event;
       var keyCode = e.keyCode || e.which;
       if (keyCode == '13') {
-          var nextPage = playfield.getElementsByClassName("next-page");
-          var nextPageUrl = nextPage.href;
+          if (getCookie(getId()) !== true) return false;
+          var nextPageElements = document.getElementsByClassName("next-page");
+          if (nextPageElements.length <= 0) return;
+          var nextPageUrl = nextPageElements[0].href;
           window.location.href = nextPageUrl;
           return false;
       }
