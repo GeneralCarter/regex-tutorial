@@ -3,3 +3,5 @@ sourcecode:
   edit: "https://github.com/CoderDojoPotsdam/regex-tutorial/edit/master"
   pullrequest: "https://github.com/CoderDojoPotsdam/regex-tutorial/compare"
   newissue: "https://github.com/CoderDojoPotsdam/regex-tutorial/issues/new"
+
+theme: jekyll-theme-cayman
